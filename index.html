@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="generator" content="Hugo 0.82.0">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+	
+	
+    <title>easyRML</title>
+
+
+    
+
+    <!-- Bootstrap core CSS -->
+ <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+	  body {
+
+  counter-reset: my-sec-counter;
+}
+	  
+	  legend::before {
+ 
+  counter-increment: my-sec-counter;
+  content: "" counter(my-sec-counter) ". ";
+}
+    </style>
+
+    
+    <!-- Custom styles for this project-->
+    <link href="css/dashboard.css" rel="stylesheet">
+  </head>
+  <body>
+    
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Easy RML</a>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+<!--  <ul class="navbar-nav px-3">
+    <li class="nav-item text-nowrap">
+      <a class="nav-link" href="#">Sign out</a>
+    </li>
+  </ul> -->
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="position-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">
+              <span data-feather="home"></span>
+              Home
+            </a>
+          </li>
+        </ul>
+
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+          <span>Saved reports</span>
+          <a class="link-secondary" href="#" aria-label="Add a new report">
+            <span data-feather="plus-circle"></span>
+          </a>
+        </h6>
+        <ul class="nav flex-column mb-2">
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Current month
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+    </nav>
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h4 class="h5">Dashboard</h4>
+        <div class="btn-toolbar mb-2 mb-md-0">
+          <div class="btn-group me-2">
+            <button type="button" class="btn btn-sm btn-outline-secondary">RML Guideline</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary">About us</button>
+          </div>
+        <!--  <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+            <span data-feather="calendar"></span>
+            This week
+          </button> -->
+        </div>
+      </div>
+       <!-- Start File Management -->
+        <div class="row">
+		
+		  <div class="col-12 col-md-7 border border-dark">
+		     <div class="mb-3"></div>
+		     <h4>File Management</h4>
+			 
+			  <form>
+				   <div class="form-group row">
+					  <div class="col-12 col-md-8 mb-3">
+					     <input class="form-control" type="text" placeholder="Insert output mapping file name" readonly>
+					  </div>
+					  <div class="col-6 col-md-4 mb-3">
+					     <input class="form-control" type="text" placeholder="Insert output path" readonly>
+					  </div>
+					  
+					</div>
+					<div class="form-group row">
+					  <div class="col-12 col-md-8 mb-3">
+						 <select class="form-control">
+						   <option>Select all prefixes from the available suggestion</option>
+						 </select>
+					  </div>
+					</div> 
+					<div class="input_fields_wrap">
+					  <div class="form-group row">
+					
+					   <div class="col-12 col-md-6 mb-3">
+					          <input class="form-control" type="text" name="mytext[]" placeholder="Write your own prefix">
+					   </div>
+					   <div class="col-md-2"></div>
+					   <div class="col-6 col-md-4 mb-3">
+					     
+							  <div class="btn-group">
+								<button type="button" class="btn btn-sm btn-outline-secondary"> <span data-feather="plus"></span><a href="#" class="add_field_button" style="text-decoration: none;color:black"> Add more prefix</a> </button>
+							  </div> 
+						 
+					   </div>
+					  </div>
+					</div>
+			  </form>  
+		  </div>
+		  <div class="col-md-1"></div>
+		  <div class="col-5 col-md-4 border border-dark">
+		     <div class="mb-5"></div>
+		     <div class="form-group row">
+			    <label for="files" class="btn"><i data-feather="file-text" style="height:40%;width:30%"></i><h5> Upload the Ontology</h5></label>
+			    <input id="files" style="visibility:hidden;" type="file">
+			 </div>
+				  
+		  </div>
+		</div>
+		
+		<!--End File Management -->
+		<div class="mb-3"></div>
+		<!--Start TriplesMap -->
+		<div class="row">
+		  <div class="col-12 border border-dark">
+		    <div class="input_fields_wraps">
+		       <div class="mb-3"></div>
+		           <div class="btn-group mb-3">
+				    <button type="button" class="btn btn-sm btn-outline-secondary"> <span data-feather="plus-circle"></span><a href="#" class="add-one" style="text-decoration: none;color:black"> Add more TriplesMap</a> </button>
+				   </div> 
+		     <legend class="title">TriplesMap</legend>
+			 
+			  
+				   <div class="form-group row">
+					  <div class="col-md-6">
+					     <input class="form-control mb-3" type="text" placeholder="Name of the TriplesMap" readonly>
+						 <div>
+						  <select id="subject" class="form-control mb-3">
+						   <option selected>Select the subject type</option>
+						   <option value="1">Reference to data as URI</option>
+						   <option value="2">Reference to a FunctionMap</option>
+						  </select>
+						 </div>
+						  
+						  <div id="uri" style="display:none;">
+							  <select class="form-control mb-3">
+							   <option selected>Select the data field from the suggestion</option>
+							   <option >#</option>
+							   <option >#</option>
+							  </select>
+							  
+							  <select class="form-control mb-3">
+							   <option selected>Select the corresponding class from the suggestion</option>
+							   <option >#</option>
+							   <option >#</option>
+							  </select>
+						  </div>
+						  
+						  <div id="map" style="display:none;">
+							  <select class="form-control mb-3">
+							   <option selected>Select the FunctionMap from the already declared ones</option>
+							   <option >#</option>
+							   <option >#</option>
+							  </select>
+						  </div>
+						  
+						  
+						  
+					  </div>
+					  <div class="col-md-2"></div>
+					  <div class="col-md-4 mb-3">
+					     <label for="sourcefile" class="btn"><i data-feather="file-text" style="height:40%;width:30%"></i><h5> Upload source header file</h5></label>
+						 <input id="sourcefile" style="visibility:hidden;" type="file">
+					  </div>
+					 
+				  <div class="col-md-6 mb-3">
+				  <h4>PredictableObjectMap</h4>
+		  
+		                  <select id="property"  class="form-control mb-3">
+						   <option selected>Select the property from the suggestion(based on the ontology) </option>
+						   <option value="#">#</option>
+						   <option value="#">#</option>
+						  </select>
+						  
+						  <select id="obj"  class="form-control mb-3">
+						   <option selected>Select the Object type </option>
+						   <option value="1">class</option>
+						   <option value="2">Reference to data</option>
+						   <option value="3">Reference to data as URI</option>
+						   <option value="4">Reference to triplesMap</option>
+						   <option value="5">Reference to FunctionMap</option>
+						  </select>
+		  
+		  
+		  
+		          </div>
+					  
+				</div>	
+				
+		  </div>
+		  
+		  </div>
+		  
+		     <!--Dynamic ELEMENT -->
+					   <div class="form-container dynamic-element" style="display:none">
+					    <div class="form-group mb-3">
+						 <div class="row border border-dark">
+						  <legend class="title">Triples Map</legend>
+						  
+						  
+						  
+						<div class="col-md-6">
+					     <input class="form-control mb-3" type="text" placeholder="Name of the TriplesMap" readonly>
+						 <div>
+						  <select id="subject" name="sub[]" class="form-control mb-3">
+						   <option selected>Select the subject type</option>
+						   <option value="1">Reference to data as URI</option>
+						   <option value="2">Reference to a FunctionMap</option>
+						  </select>
+						 </div>
+						  
+						  <div id="uri" style="display:none;">
+							  <select class="form-control mb-3" name="dat[]">
+							   <option selected>Select the data field from the suggestion</option>
+							   <option >#</option>
+							   <option >#</option>
+							  </select>
+							  
+							  <select class="form-control mb-3" name="cla[]">
+							   <option selected>Select the corresponding class from the suggestion</option>
+							   <option >#</option>
+							   <option >#</option>
+							  </select>
+						  </div>
+						  
+						  <div id="map" style="display:none;">
+							  <select class="form-control mb-3">
+							   <option selected>Select the FunctionMap from the already declared ones</option>
+							   <option >#</option>
+							   <option >#</option>
+							  </select>
+						  </div>
+						  
+						  
+						  
+					  </div>
+					  <div class="col-md-2"></div>
+					  <div class="col-md-4 mb-3">
+					     <label for="sourcefile" class="btn"><i data-feather="file-text" style="height:40%;width:30%"></i><h5> Upload source header file</h5></label>
+						 <input id="sourcefile" style="visibility:hidden;" type="file">
+					  </div>
+						  
+						  
+							<!-- End of fields-->
+							<div class="col-md-1">
+							<a class="delete"> <button type="button" class="btn btn-sm btn-outline-secondary">Delete</button></a>
+							</div>
+						  </div>
+						</div>
+						
+						</div>
+						<!-- END OF HIDDEN ELEMENT -->
+		  
+		  
+		 
+			  <form>
+			  <fieldset>
+			  <!-- Form Name -->
+			  
+				  <div class="mb-3"></div>
+				  <div class="dynamic-stuff">
+				  
+				  
+				  
+				  </div>
+					<!-- Dynamic element will be cloned here -->
+					<!-- You can call clone function once if you want it to show it a first element-->
+				
+			  
+			 
+			</fieldset>
+			</form>
+			
+		  
+		  
+		  
+		  
+		
+		</div>
+
+    
+    </main>
+  </div>
+</div>
+
+
+    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
+	<script src="js/dashboard.js"></script>
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script>
+			$(document).ready(function() {
+			var max_fields      = 10; //maximum input boxes allowed
+			var wrapper   		= $(".input_fields_wrap"); //Fields wrapper
+			var add_button      = $(".add_field_button"); //Add button ID
+			
+			var x = 1; //initlal text box count
+			$(add_button).click(function(e){ //on add input button click
+				e.preventDefault();
+				if(x < max_fields){ //max input box allowed
+					x++; //text box increment
+					$(wrapper).append('<div><input class="form-control" type="text" name="mytext[]" placeholder="Write your own prefix"/><a href="#" class="remove_field" style="text-decoration:none;color:black">Remove</a></div>'); //add input box
+				}
+			});
+			
+			$(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+				e.preventDefault(); $(this).parent('div').remove(); x--;
+			})
+		});
+		
+		
+	
+		
+		//newcode for dynamic form creation
+		
+		$('.add-one').click(function(){
+		$('.dynamic-element').first().clone().appendTo('.dynamic-stuff').show();
+		  attach_delete();
+		});
+
+
+		//Attach functionality to delete buttons
+		function attach_delete(){
+		  $('.delete').off();
+		  $('.delete').click(function(){
+			console.log("click");
+			$(this).closest('.form-group').remove();
+		  });
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+	   $("#files").change(function() {
+		  filename = this.files[0].name
+		  console.log(filename);
+		});
+		
+		$("#sourcefile").change(function() {
+		  filenames = this.sourcefile[0].name
+		  console.log(filenames);
+		});
+		
+		$('#subject').on('change', function() {
+		  //  alert( this.value ); // or $(this).val()
+		  if(this.value == "1") {
+			$('#uri').show();
+			$('#map').hide();
+		  } else {
+			$('#uri').hide();
+			$('#map').show();
+		  }
+		});
+	
+	
+	</script>
+ 
+	
+  </body>
+</html>
